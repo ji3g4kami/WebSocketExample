@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		147C65692C7FC94A00F06B7E /* ChatAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C65682C7FC94A00F06B7E /* ChatAppApp.swift */; };
+		147C65692C7FC94A00F06B7E /* ChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C65682C7FC94A00F06B7E /* ChatApp.swift */; };
 		147C656B2C7FC94A00F06B7E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C656A2C7FC94A00F06B7E /* ContentView.swift */; };
 		147C656D2C7FC94B00F06B7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 147C656C2C7FC94B00F06B7E /* Assets.xcassets */; };
 		147C65712C7FC94B00F06B7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 147C65702C7FC94B00F06B7E /* Preview Assets.xcassets */; };
@@ -37,7 +37,7 @@
 
 /* Begin PBXFileReference section */
 		147C65652C7FC94A00F06B7E /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		147C65682C7FC94A00F06B7E /* ChatAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAppApp.swift; sourceTree = "<group>"; };
+		147C65682C7FC94A00F06B7E /* ChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatApp.swift; sourceTree = "<group>"; };
 		147C656A2C7FC94A00F06B7E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		147C656C2C7FC94B00F06B7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		147C656E2C7FC94B00F06B7E /* ChatApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChatApp.entitlements; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		147C65672C7FC94A00F06B7E /* ChatApp */ = {
 			isa = PBXGroup;
 			children = (
-				147C65682C7FC94A00F06B7E /* ChatAppApp.swift */,
+				147C65682C7FC94A00F06B7E /* ChatApp.swift */,
 				147C656A2C7FC94A00F06B7E /* ContentView.swift */,
 				147C65962C7FCB5200F06B7E /* WebSocketManager.swift */,
 				147C656C2C7FC94B00F06B7E /* Assets.xcassets */,
@@ -201,7 +201,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1510;
-				LastUpgradeCheck = 1510;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					147C65642C7FC94A00F06B7E = {
 						CreatedOnToolsVersion = 15.1;
@@ -271,7 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				147C656B2C7FC94A00F06B7E /* ContentView.swift in Sources */,
-				147C65692C7FC94A00F06B7E /* ChatAppApp.swift in Sources */,
+				147C65692C7FC94A00F06B7E /* ChatApp.swift in Sources */,
 				147C65972C7FCB5200F06B7E /* WebSocketManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,6 +343,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -404,6 +405,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -431,6 +433,7 @@
 				CODE_SIGN_ENTITLEMENTS = ChatApp/ChatApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ChatApp/Preview Content\"";
 				DEVELOPMENT_TEAM = ND2LGZT6B5;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -469,6 +472,7 @@
 				CODE_SIGN_ENTITLEMENTS = ChatApp/ChatApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ChatApp/Preview Content\"";
 				DEVELOPMENT_TEAM = ND2LGZT6B5;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -506,6 +510,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ND2LGZT6B5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
@@ -529,6 +534,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ND2LGZT6B5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
@@ -551,6 +557,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ND2LGZT6B5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
@@ -573,6 +580,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ND2LGZT6B5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;

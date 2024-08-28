@@ -13,8 +13,13 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            List(webSocketManager.messages, id: \.self) { message in
-                Text(message)
+            ScrollView {
+                LazyVStack(alignment: .leading, spacing: 10) {
+                    ForEach(webSocketManager.messages) { message in
+                        ChatBubble(message: message, isCurrentUser: message.senderID == webSocketManager.userID)
+                    }
+                }
+                .padding()
             }
             
             HStack {
@@ -27,9 +32,6 @@ struct ContentView: View {
             }
             .padding()
         }
-        .onAppear {
-            webSocketManager.connectWebSocket()
-        }
     }
     
     func sendMessage() {
@@ -39,6 +41,8 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }

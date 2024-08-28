@@ -1,9 +1,33 @@
-import Foundation
+import SwiftUI
 import Starscream
 
+struct Message: Identifiable, Equatable {
+    let id = UUID()
+    let text: String
+    let senderID: String
+}
+
+struct ChatBubble: View {
+    let message: Message
+    let isCurrentUser: Bool
+    
+    var body: some View {
+        HStack {
+            if isCurrentUser { Spacer() }
+            Text(message.text)
+                .padding(10)
+                .background(isCurrentUser ? Color.blue : Color.gray)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+            if !isCurrentUser { Spacer() }
+        }
+    }
+}
+
 class WebSocketManager: ObservableObject {
-    @Published var messages: [String] = []
+    @Published var messages: [Message] = []
     private var socket: WebSocket?
+    let userID = UUID().uuidString
     
     init() {
         connectWebSocket()
@@ -18,18 +42,26 @@ class WebSocketManager: ObservableObject {
         socket?.connect()
     }
     
-    func sendMessage(_ message: String) {
-        socket?.write(string: message)
+    func sendMessage(_ text: String) {
+        let message = ["text": text, "senderID": userID]
+        if let data = try? JSONEncoder().encode(message) {
+            socket?.write(data: data)
+        }
     }
 }
 
 extension WebSocketManager: WebSocketDelegate {
     func didReceive(event: Starscream.WebSocketEvent, client: Starscream.WebSocketClient) {
-        
         switch event {
         case .text(let string):
-            DispatchQueue.main.async {
-                self.messages.append(string)
+            if let data = string.data(using: .utf8),
+               let message = try? JSONDecoder().decode([String: String].self, from: data) {
+                DispatchQueue.main.async {
+                    let newMessage = Message(text: message["text"] ?? "", senderID: message["senderID"] ?? "")
+                    if !self.messages.contains(where: { $0.text == newMessage.text && $0.senderID == newMessage.senderID }) {
+                        self.messages.append(newMessage)
+                    }
+                }
             }
         case .connected:
             print("WebSocket connected")
